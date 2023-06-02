@@ -1,9 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { BuyListComponent } from './buy-list.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import {BuyListComponent} from './buy-list.component';
+import {IonicModule} from "@ionic/angular";
 
 describe('BuyListComponent', () => {
   let component: BuyListComponent;
@@ -11,7 +9,7 @@ describe('BuyListComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [MatToolbarModule, MatButtonModule, MatIconModule],
+      imports: [IonicModule],
       declarations: [BuyListComponent],
     });
     fixture = TestBed.createComponent(BuyListComponent);

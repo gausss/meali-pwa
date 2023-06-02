@@ -1,12 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MealListComponent } from './meal-list.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MealService } from '../meal.service';
-import { MatCardModule } from '@angular/material/card';
-import { MatListModule } from '@angular/material/list';
+import {MealListComponent} from './meal-list.component';
+import {MealService} from '../meal.service';
+import {IonicModule} from "@ionic/angular";
 
 describe('MealListComponent', () => {
   let component: MealListComponent;
@@ -14,12 +10,7 @@ describe('MealListComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        MatToolbarModule,
-        MatButtonModule,
-        MatIconModule,
-        MatCardModule,
-        MatListModule,
+      imports: [IonicModule
       ],
       declarations: [MealListComponent],
       providers: [MealService],
