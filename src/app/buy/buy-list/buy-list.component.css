@@ -1,0 +1,12 @@
+.empty-bg {
+  height: 45vh;
+  width: auto;
+  filter: invert(100%);
+}
+
+.main {
+  display: grid;
+  justify-content: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}

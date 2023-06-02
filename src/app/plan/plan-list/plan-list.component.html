@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Dein Plan
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Dein Plan</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="main">
+    <h3>Noch kein Plan erstellt.</h3>
+    <img
+      src="assets/farfalle.png"
+      class="empty-bg"
+      alt="pasta-farfalle"
+    />
+
+    <ion-button (click)="generate()">
+      <ion-icon name="sync-outline"></ion-icon>
+      Generate
+    </ion-button>
+  </div>
+</ion-content>

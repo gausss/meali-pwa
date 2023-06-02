@@ -1,0 +1,5 @@
+.empty-bg {
+  height: 45vh;
+  width: auto;
+  filter: invert(100%);
+}

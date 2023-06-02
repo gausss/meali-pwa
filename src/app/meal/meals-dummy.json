@@ -1,0 +1,104 @@
+[
+  {
+    "id": 1,
+    "name": "Ravioli",
+    "description": "Open and microwave. Put into bowl. Enjoy.",
+    "ingredients": [
+      {
+        "amount": 1,
+        "unit": "x",
+        "name": "Ravioli"
+      },
+      {
+        "amount": 100,
+        "unit": "g",
+        "name": "Tomaten"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Farfalle",
+    "description": "Open and microwave. Put into bowl. Enjoy.",
+    "ingredients": [
+      {
+        "amount": 1,
+        "unit": "x",
+        "name": "Farfalle"
+      },
+      {
+        "amount": 150,
+        "unit": "g",
+        "name": "Tomaten"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Penne",
+    "description": "Open and microwave. Put into bowl. Enjoy.",
+    "ingredients": [
+      {
+        "amount": 1,
+        "unit": "x",
+        "name": "Penne"
+      },
+      {
+        "amount": 200,
+        "unit": "g",
+        "name": "Tomaten"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Risoni",
+    "description": "Open and microwave. Put into bowl. Enjoy.",
+    "ingredients": [
+      {
+        "amount": 1,
+        "unit": "x",
+        "name": "Risoni"
+      },
+      {
+        "amount": 200,
+        "unit": "g",
+        "name": "Tomaten"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Rigatoni",
+    "description": "Open and microwave. Put into bowl. Enjoy.",
+    "ingredients": [
+      {
+        "amount": 1,
+        "unit": "x",
+        "name": "Rigatoni"
+      },
+      {
+        "amount": 200,
+        "unit": "g",
+        "name": "Tomaten"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Spaghetti",
+    "description": "Open and microwave. Put into bowl. Enjoy.",
+    "ingredients": [
+      {
+        "amount": 1,
+        "unit": "x",
+        "name": "Spaghetti"
+      },
+      {
+        "amount": 200,
+        "unit": "g",
+        "name": "Tomaten"
+      }
+    ]
+  }
+]
