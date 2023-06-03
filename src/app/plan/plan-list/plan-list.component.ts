@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MealService } from '../../shared/meal.service';
 
 @Component({
   selector: 'app-plan-list',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 export class PlanListComponent {
   stored: string | null;
 
-  constructor() {
+  constructor(readonly mealService: MealService) {
     this.stored = localStorage.getItem('plan');
   }
 

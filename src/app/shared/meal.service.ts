@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Meal } from './meal.model';
-import meals from './meals-dummy.json';
+import { Meal } from '../meal/meal.model';
+import meals from '../meal/meals-dummy.json';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class MealService {
   store: Map<number, Meal> = new Map(
     meals.map((meal) => [meal.id, meal as Meal])

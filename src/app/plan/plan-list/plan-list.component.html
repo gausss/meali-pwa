@@ -1,8 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Dein Plan
-    </ion-title>
+    <ion-title> Dein Plan</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,15 +12,14 @@
   </ion-header>
 
   <div class="main">
+    <ng-container *ngIf="mealService.isEmpty()">
+      <h3>Legen sie Gerichte an um einen Plan zu erstellen.</h3>
+    </ng-container>
     <h3>Noch kein Plan erstellt.</h3>
-    <img
-      src="assets/farfalle.png"
-      class="empty-bg"
-      alt="pasta-farfalle"
-    />
+    <img src="assets/farfalle.png" class="empty-bg" alt="pasta-farfalle" />
 
     <ion-button (click)="generate()">
-      <ion-icon name="sync-outline"></ion-icon>
+      <ion-icon name="sync-outline" slot="start"></ion-icon>
       Generate
     </ion-button>
   </div>
