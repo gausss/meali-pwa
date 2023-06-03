@@ -10,8 +10,15 @@ export class MealService {
 
   constructor() {}
 
-  get(id: number): Meal | undefined {
+  get(id: number | undefined): Meal | undefined {
+    if (!id) {
+      return undefined;
+    }
     return this.store.get(id);
+  }
+
+  getAllIds(): readonly number[] {
+    return [...this.store.keys()];
   }
 
   getAll(): readonly Meal[] {

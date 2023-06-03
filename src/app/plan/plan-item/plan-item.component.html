@@ -1,1 +1,12 @@
-<p>plan-item works!</p>
+<ng-container *ngIf="mealService.get(suggestion?.mealId) as suggestedMeal">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ suggestion?.day }}</ion-card-title>
+      <ion-card-subtitle>{{ suggestedMeal.name }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{ suggestedMeal.description }}
+    </ion-card-content>
+  </ion-card>
+</ng-container>
