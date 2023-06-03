@@ -1,7 +1,0 @@
-{
-  "name": "meali",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}

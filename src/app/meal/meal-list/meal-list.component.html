@@ -1,8 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Deine Gerichte
-    </ion-title>
+    <ion-title> Deine Gerichte </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -16,21 +14,16 @@
   <div class="main">
     <div *ngIf="mealService.isEmpty()">
       <h3>Noch keine Gerichte erstellt.</h3>
-      <img
-        src="assets/penne.png"
-        class="empty-bg"
-        alt="pasta-farfalle"
-      />
+      <img src="assets/penne.png" class="empty-bg" alt="pasta-farfalle" />
     </div>
     <div class="content">
       <ion-list>
         <ng-container *ngFor="let meal of mealService.getAll()">
           <ion-item>
-            <ion-label>{{meal.name}}</ion-label>
+            <ion-label>{{ meal.name }}</ion-label>
           </ion-item>
         </ng-container>
       </ion-list>
     </div>
   </div>
 </ion-content>
-
