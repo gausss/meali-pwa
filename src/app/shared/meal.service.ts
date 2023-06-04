@@ -14,11 +14,7 @@ export class MealService {
     if (!id) {
       return undefined;
     }
-    console.log(this.store);
-    console.log(id);
-    const matchedMeal = this.store.get(id);
-    console.log(matchedMeal);
-    return matchedMeal;
+    return this.store.get(id);
   }
 
   getAllIds(): readonly number[] {
@@ -27,6 +23,20 @@ export class MealService {
 
   getAll(): readonly Meal[] {
     return [...this.store.values()];
+  }
+
+  create(meal: Meal): Meal {
+    const nextId: number = Math.max(...this.store.keys()) + 1;
+    const createdMeal: Meal = {
+      ...meal,
+      id: nextId,
+    };
+    this.store.set(nextId, createdMeal);
+    return createdMeal;
+  }
+
+  delete(id: number) {
+    this.store.delete(id);
   }
 
   isEmpty(): boolean {

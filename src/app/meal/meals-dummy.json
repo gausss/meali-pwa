@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Ravioli",
-    "description": "Open and microwave. Put into bowl. Enjoy.",
+    "difficulty": "easy",
     "ingredients": [
       {
         "amount": 1,
@@ -19,7 +19,7 @@
   {
     "id": 2,
     "name": "Farfalle",
-    "description": "Open and microwave. Put into bowl. Enjoy.",
+    "difficulty": "easy",
     "ingredients": [
       {
         "amount": 1,
@@ -36,7 +36,7 @@
   {
     "id": 3,
     "name": "Penne",
-    "description": "Open and microwave. Put into bowl. Enjoy.",
+    "difficulty": "easy",
     "ingredients": [
       {
         "amount": 1,
@@ -53,7 +53,7 @@
   {
     "id": 4,
     "name": "Risoni",
-    "description": "Open and microwave. Put into bowl. Enjoy.",
+    "difficulty": "hard",
     "ingredients": [
       {
         "amount": 1,
@@ -70,7 +70,7 @@
   {
     "id": 5,
     "name": "Rigatoni",
-    "description": "Open and microwave. Put into bowl. Enjoy.",
+    "difficulty": "easy",
     "ingredients": [
       {
         "amount": 1,
@@ -87,7 +87,7 @@
   {
     "id": 6,
     "name": "Spaghetti",
-    "description": "Open and microwave. Put into bowl. Enjoy.",
+    "difficulty": "easy",
     "ingredients": [
       {
         "amount": 1,

@@ -1,8 +1,8 @@
 export interface Meal {
   id: number;
   name: string;
-  ingredients: Ingredient[];
-  description: string;
+  ingredients?: Ingredient[];
+  difficulty: Difficulty;
 }
 
 export interface Ingredient {
@@ -12,3 +12,4 @@ export interface Ingredient {
 }
 
 export type Unit = 'g' | 'ml' | 'x';
+export type Difficulty = 'easy' | 'hard';
