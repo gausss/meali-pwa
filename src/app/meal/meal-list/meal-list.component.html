@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Deine Gerichte </ion-title>
+    <ion-title> Deine Gerichte</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,19 +11,21 @@
     </ion-toolbar>
   </ion-header>
 
-  <div class="main">
-    <div *ngIf="mealService.isEmpty()">
-      <h3>Noch keine Gerichte erstellt.</h3>
-      <img src="assets/penne.png" class="empty-bg" alt="pasta-farfalle" />
-    </div>
-    <div class="content">
-      <ion-list>
-        <ng-container *ngFor="let meal of mealService.getAll()">
-          <ion-item>
-            <ion-label>{{ meal.name }}</ion-label>
-          </ion-item>
-        </ng-container>
-      </ion-list>
-    </div>
+  <div *ngIf="mealService.isEmpty()" class="ion-padding">
+    <img src="assets/penne.png" class="empty-bg" alt="pasta-farfalle" />
+    <h3>Noch keine Gerichte erstellt.</h3>
+  </div>
+  <ion-list>
+    <ng-container *ngFor="let meal of mealService.getAll()">
+      <ion-item [routerLink]="meal.id.toString()">
+        <ion-label>{{ meal.name }}</ion-label>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+  <div class="ion-text-center ion-margin-vertical">
+    <ion-button [routerLink]="'create'">
+      <ion-icon name="add-outline" slot="start"></ion-icon>
+      Add
+    </ion-button>
   </div>
 </ion-content>

@@ -11,22 +11,20 @@
     </ion-toolbar>
   </ion-header>
 
-  <div class="main">
-    <ng-container *ngIf="mealService.isEmpty()">
-      <h3>Legen sie Gerichte an um einen Plan zu erstellen.</h3>
+  <div class="ion-padding" *ngIf="planService.isEmpty$() | async">
+    <img src="assets/farfalle.png" class="empty-bg" alt="pasta-farfalle" />
+    <h3 *ngIf="mealService.isEmpty()">
+      Legen sie Gerichte an um einen Plan zu erstellen.
+    </h3>
+    <h3>Noch kein Plan erstellt.</h3>
+  </div>
+
+  <div class="plan-wrapper">
+    <ng-container *ngFor="let suggestion of planService.get$() | async">
+      <plan-item [suggestion]="suggestion"></plan-item>
     </ng-container>
-
-    <ng-container *ngIf="planService.isEmpty$() | async">
-      <h3>Noch kein Plan erstellt.</h3>
-      <img src="assets/farfalle.png" class="empty-bg" alt="pasta-farfalle" />
-    </ng-container>
-
-    <div class="plan-wrapper">
-      <ng-container *ngFor="let suggestion of planService.get$() | async">
-        <plan-item [suggestion]="suggestion"></plan-item>
-      </ng-container>
-    </div>
-
+  </div>
+  <div class="ion-text-center">
     <ion-button (click)="generate()">
       <ion-icon name="sync-outline" slot="start"></ion-icon>
       Generate
