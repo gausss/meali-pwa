@@ -1,8 +1,8 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {BuyListComponent} from './buy-list/buy-list.component';
-import {RouterModule} from '@angular/router';
-import {IonicModule} from "@ionic/angular";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { BuyListComponent } from './buy-list/buy-list.component';
+import { RouterModule } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [BuyListComponent],
@@ -17,5 +17,4 @@ import {IonicModule} from "@ionic/angular";
     IonicModule,
   ],
 })
-export class BuyModule {
-}
+export class BuyModule {}

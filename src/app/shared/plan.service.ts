@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MealService } from './meal.service';
-import { BehaviorSubject, map, Observable, tap } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 
 export interface Suggestion {
   mealId: number;

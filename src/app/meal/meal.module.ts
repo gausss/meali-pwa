@@ -4,6 +4,7 @@ import { MealListComponent } from './meal-list/meal-list.component';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { MealItemComponent } from './meal-item/meal-item.component';
+import { MissingMandatoryFieldsPipe } from '../shared/mandatory-fields-pipe.pipe';
 
 @NgModule({
   declarations: [MealListComponent, MealItemComponent],
@@ -26,6 +27,7 @@ import { MealItemComponent } from './meal-item/meal-item.component';
       },
     ]),
     IonicModule,
+    MissingMandatoryFieldsPipe,
   ],
 })
 export class MealModule {}

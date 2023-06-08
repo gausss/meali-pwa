@@ -1,7 +1,7 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {BuyListComponent} from './buy-list.component';
-import {IonicModule} from "@ionic/angular";
+import { BuyListComponent } from './buy-list.component';
+import { IonicModule } from '@ionic/angular';
 
 describe('BuyListComponent', () => {
   let component: BuyListComponent;

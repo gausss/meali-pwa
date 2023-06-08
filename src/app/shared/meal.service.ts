@@ -35,6 +35,11 @@ export class MealService {
     return createdMeal;
   }
 
+  update(id: number, meal: Meal) {
+    this.store.set(id, meal);
+    return meal;
+  }
+
   delete(id: number) {
     this.store.delete(id);
   }

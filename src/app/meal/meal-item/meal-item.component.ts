@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Meal } from '../meal.model';
+import { Ingredient, Meal } from '../meal.model';
 import { MealService } from '../../shared/meal.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { InputCustomEvent, SelectCustomEvent } from '@ionic/angular';
@@ -11,6 +11,7 @@ import { InputCustomEvent, SelectCustomEvent } from '@ionic/angular';
 })
 export class MealItemComponent {
   mealDraft: Partial<Meal>;
+  currentIngredient: Partial<Ingredient> = {};
 
   constructor(
     private readonly mealService: MealService,
@@ -24,14 +25,18 @@ export class MealItemComponent {
   onNameChange(event: Event) {
     const value = (event as InputCustomEvent).detail.value;
     if (value) {
-      this.mealDraft.name = value;
+      this.mealDraft = { ...this.mealDraft, name: value };
+    } else {
+      this.mealDraft = { ...this.mealDraft, name: undefined };
     }
   }
 
   onDifficultyChange(event: Event) {
     const value = (event as SelectCustomEvent).detail.value;
     if (value) {
-      this.mealDraft.difficulty = value;
+      this.mealDraft = { ...this.mealDraft, difficulty: value };
+    } else {
+      this.mealDraft = { ...this.mealDraft, difficulty: undefined };
     }
   }
 
@@ -42,8 +47,55 @@ export class MealItemComponent {
     await this.router.navigate(['tabs/meal']);
   }
 
-  async onCreate() {
-    this.mealService.create(this.mealDraft as Meal);
+  async onSave() {
+    if (this.mealDraft.id) {
+      this.mealService.update(this.mealDraft.id, this.mealDraft as Meal);
+    } else {
+      this.mealService.create(this.mealDraft as Meal);
+    }
     await this.router.navigate(['tabs/meal']);
+  }
+
+  onIngredientNameChange(event: Event) {
+    const value = (event as InputCustomEvent).detail.value;
+    if (value) {
+      this.currentIngredient = { ...this.currentIngredient, name: value };
+    } else {
+      this.currentIngredient = { ...this.currentIngredient, name: undefined };
+    }
+  }
+
+  onAmountChange(event: Event) {
+    const value = (event as InputCustomEvent).detail.value;
+    if (value) {
+      this.currentIngredient = {
+        ...this.currentIngredient,
+        amount: Number.parseInt(value),
+      };
+    } else {
+      this.currentIngredient = { ...this.currentIngredient, amount: undefined };
+    }
+  }
+  onUnitChange(event: Event) {
+    const value = (event as SelectCustomEvent).detail.value;
+    if (value) {
+      this.currentIngredient = { ...this.currentIngredient, unit: value };
+    } else {
+      this.currentIngredient = { ...this.currentIngredient, unit: undefined };
+    }
+  }
+
+  onAddIngredient() {
+    this.mealDraft = {
+      ...this.mealDraft,
+      ingredients: [
+        ...(this.mealDraft.ingredients || []),
+        this.currentIngredient as Ingredient,
+      ],
+    };
+  }
+
+  onRemoveIngredient(index: number) {
+    this.mealDraft.ingredients?.splice(index, 1);
   }
 }

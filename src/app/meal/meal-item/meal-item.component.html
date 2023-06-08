@@ -16,7 +16,7 @@
         label="Name"
         placeholder="Enter company name"
         [value]="mealDraft.name"
-        (ionChange)="onNameChange($event)"
+        (ionInput)="onNameChange($event)"
       ></ion-input>
     </ion-item>
     <ion-item>
@@ -32,12 +32,70 @@
         <ion-select-option value="hard">Aufwändig</ion-select-option>
       </ion-select>
     </ion-item>
+    <ion-item>
+      <ion-label><b>Zutaten</b></ion-label>
+    </ion-item>
   </ion-list>
-  <div
-    class="ion-text-center ion-margin-vertical"
-    *ngIf="!mealDraft.id"
-    (click)="onCreate()"
-  >
-    <ion-button> Erstellen</ion-button>
+  <ion-list [inset]="true">
+    <ion-item
+      *ngFor="let ingredient of this.mealDraft.ingredients; let i = index"
+    >
+      <ion-button fill="clear" (click)="onRemoveIngredient(i)">
+        <ion-icon
+          slot="icon-only"
+          name="close-circle-outline"
+          color="dark"
+        ></ion-icon>
+      </ion-button>
+      {{ ingredient.amount }}{{ ingredient.unit }} {{ ingredient.name }}
+    </ion-item>
+    <ion-item>
+      <ion-button
+        fill="clear"
+        (click)="onAddIngredient()"
+        [disabled]="
+          currentIngredient.name
+            | mandatoryFields
+              : currentIngredient.amount
+              : currentIngredient.unit
+        "
+      >
+        <ion-icon
+          slot="icon-only"
+          name="add-circle-outline"
+          color="dark"
+        ></ion-icon>
+      </ion-button>
+      <ion-input
+        placeholder="Zutat"
+        [value]="currentIngredient.name"
+        (ionInput)="onIngredientNameChange($event)"
+      ></ion-input>
+      <ion-input
+        type="number"
+        placeholder="Amount"
+        [value]="currentIngredient.amount"
+        (ionInput)="onAmountChange($event)"
+      ></ion-input>
+      <ion-select
+        justify="start"
+        interface="popover"
+        placeholder="Maßeinheit"
+        [value]="currentIngredient.unit"
+        (ionChange)="onUnitChange($event)"
+      >
+        <ion-select-option value="g">Gramm</ion-select-option>
+        <ion-select-option value="ml">Milliliter</ion-select-option>
+        <ion-select-option value="x">Stück</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <div class="ion-text-center ion-margin-vertical">
+    <ion-button
+      [disabled]="mealDraft.name | mandatoryFields : mealDraft.difficulty"
+      (click)="onSave()"
+    >
+      Speichern
+    </ion-button>
   </div>
 </ion-content>
