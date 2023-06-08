@@ -9,9 +9,19 @@ export interface Suggestion {
 
 @Injectable({ providedIn: 'root' })
 export class PlanService {
+  private readonly storeKey = 'meali.plan';
   storedPlan$ = new BehaviorSubject<Suggestion[]>([]);
 
-  constructor(private readonly mealService: MealService) {}
+  constructor(private readonly mealService: MealService) {
+    this.initStore();
+  }
+
+  private initStore() {
+    const storedData = localStorage.getItem(this.storeKey);
+    if (storedData) {
+      this.storedPlan$.next(JSON.parse(storedData));
+    }
+  }
 
   get$(): Observable<readonly Suggestion[]> {
     return this.storedPlan$;
@@ -23,6 +33,10 @@ export class PlanService {
 
   regenerate() {
     this.storedPlan$.next(this.generate());
+    localStorage.setItem(
+      this.storeKey,
+      JSON.stringify(this.storedPlan$.getValue())
+    );
   }
   private generate(): Suggestion[] {
     const meals = this.mealService.getAllIds();
