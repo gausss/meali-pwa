@@ -24,7 +24,6 @@ export class PlanService {
   regenerate() {
     this.storedPlan$.next(this.generate());
   }
-
   private generate(): Suggestion[] {
     const meals = this.mealService.getAllIds();
     const suggestions = new Set<number>();

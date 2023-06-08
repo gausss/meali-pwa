@@ -11,8 +11,19 @@
     </ion-toolbar>
   </ion-header>
 
-  <div class="ion-padding">
+  <div *ngIf="planService.isEmpty$() | async" class="ion-padding">
     <img src="assets/ravioli.png" class="empty-bg" alt="pasta-farfalle" />
-    <h4>Erstelle zuerst einen Plan um eine Einkaufsliste zu erhalten.</h4>
+    <h3>Erstelle zuerst einen Plan um eine Einkaufsliste zu erhalten.</h3>
   </div>
+  <ng-container *ngFor="let suggestion of planService.get$() | async">
+    <ng-container *ngIf="mealService.get(suggestion.mealId) as meal">
+      <h5 class="ion-padding">{{ meal.name }}</h5>
+      <ion-list>
+        <ion-item *ngFor="let ingredient of meal?.ingredients"
+          >{{ ingredient.amount }}{{ ingredient.unit }}
+          {{ ingredient.name }}</ion-item
+        >
+      </ion-list>
+    </ng-container>
+  </ng-container>
 </ion-content>
