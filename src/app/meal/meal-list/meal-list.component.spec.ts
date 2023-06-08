@@ -1,8 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MealListComponent } from './meal-list.component';
-import { MealService } from '../../shared/meal.service';
+import {
+  RouterTestingModule
+} from '@angular/router/testing';
 import { IonicModule } from '@ionic/angular';
+import { MandatoryFieldsPipe } from '../mandatory-fields-pipe.pipe';
+import { MealListComponent } from './meal-list.component';
 
 describe('MealListComponent', () => {
   let component: MealListComponent;
@@ -10,9 +13,8 @@ describe('MealListComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [IonicModule],
+      imports: [IonicModule, RouterTestingModule, MandatoryFieldsPipe],
       declarations: [MealListComponent],
-      providers: [MealService],
     });
     fixture = TestBed.createComponent(MealListComponent);
     component = fixture.componentInstance;

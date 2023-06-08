@@ -3,6 +3,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { MealItemComponent } from './meal-item.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { MandatoryFieldsPipe } from '../mandatory-fields-pipe.pipe';
 
 describe('MealItemComponent', () => {
   let component: MealItemComponent;
@@ -11,7 +12,11 @@ describe('MealItemComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [MealItemComponent],
-      imports: [IonicModule.forRoot(), RouterTestingModule],
+      imports: [
+        IonicModule.forRoot(),
+        RouterTestingModule,
+        MandatoryFieldsPipe,
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(MealItemComponent);
