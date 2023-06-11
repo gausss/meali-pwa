@@ -4,7 +4,7 @@ import {
   RouterTestingModule
 } from '@angular/router/testing';
 import { IonicModule } from '@ionic/angular';
-import { MandatoryFieldsPipe } from '../mandatory-fields-pipe.pipe';
+import { MandatoryFieldsPipe } from '../../shared/mandatory-fields.pipe';
 import { MealListComponent } from './meal-list.component';
 
 describe('MealListComponent', () => {

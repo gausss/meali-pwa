@@ -44,7 +44,7 @@ export class MealItemComponent {
     if (this.mealDraft.id) {
       this.mealService.delete(this.mealDraft.id);
     }
-    await this.router.navigate(['tabs/meal']);
+    await this.router.navigate(['meal']);
   }
 
   async onSave() {
@@ -53,7 +53,7 @@ export class MealItemComponent {
     } else {
       this.mealService.create(this.mealDraft as Meal);
     }
-    await this.router.navigate(['tabs/meal']);
+    await this.router.navigate(['meal']);
   }
 
   onIngredientNameChange(event: Event) {

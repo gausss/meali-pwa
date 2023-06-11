@@ -3,7 +3,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { MealItemComponent } from './meal-item.component';
 import { RouterTestingModule } from '@angular/router/testing';
-import { MandatoryFieldsPipe } from '../mandatory-fields-pipe.pipe';
+import { MandatoryFieldsPipe } from '../../shared/mandatory-fields.pipe';
 
 describe('MealItemComponent', () => {
   let component: MealItemComponent;
