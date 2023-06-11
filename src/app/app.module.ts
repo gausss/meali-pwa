@@ -14,9 +14,21 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 
 const routes: Routes = [
   {
+    path: 'plan',
+    loadChildren: () => import('./plan/plan.module').then((m) => m.PlanModule),
+  },
+  {
+    path: 'meal',
+    loadChildren: () => import('./meal/meal.module').then((m) => m.MealModule),
+  },
+  {
+    path: 'buy',
+    loadChildren: () => import('./buy/buy.module').then((m) => m.BuyModule),
+  },
+  {
     path: '',
-    loadChildren: () =>
-      import('./tabs/tabs.module').then((m) => m.TabsPageModule),
+    redirectTo: 'plan',
+    pathMatch: 'full',
   },
 ];
 
