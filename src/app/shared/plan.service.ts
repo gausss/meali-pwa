@@ -5,6 +5,7 @@ import { BehaviorSubject, map, Observable } from 'rxjs';
 export interface Suggestion {
   mealId: number;
   day: number;
+  pinned: boolean;
 }
 
 @Injectable({ providedIn: 'root' })
@@ -38,9 +39,15 @@ export class PlanService {
       JSON.stringify(this.storedPlan$.getValue())
     );
   }
+
   private generate(): Suggestion[] {
+    const currentPlan = this.storedPlan$.getValue();
     const meals = this.mealService.getAllIds();
-    const suggestions = new Set<number>();
+    const suggestions = new Set<number>(
+      currentPlan
+        .filter((suggestion) => suggestion.pinned)
+        .map((suggestion) => suggestion.mealId)
+    );
 
     while (suggestions.size < Math.min(4, meals.length)) {
       const randomMealIndex = Math.floor(Math.random() * meals.length);
@@ -51,6 +58,7 @@ export class PlanService {
     return Array.from(suggestions).map((suggestion, index) => ({
       mealId: suggestion,
       day: index + 1,
+      pinned: false,
     }));
   }
 }

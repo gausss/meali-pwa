@@ -1,14 +1,16 @@
 <ng-container *ngIf="mealService.get(suggestion?.mealId) as suggestedMeal">
-  <ion-card>
+  <ion-card (click)="onPin()">
     <ion-card-header>
-      <ion-card-title
-        >{{ suggestedMeal.name }}
+      <ion-card-title>
+        <ion-icon
+          name="magnet-outline"
+          [ngClass]="{ inactive: !suggestion?.pinned }"
+        ></ion-icon>
+        {{ suggestedMeal.name }}
         <ion-chip color="success" *ngIf="suggestedMeal.difficulty === 'easy'">
-          <ion-icon name="checkmark-circle-outline"></ion-icon>
           <ion-label>Einfach</ion-label>
         </ion-chip>
         <ion-chip color="warning" *ngIf="suggestedMeal.difficulty === 'hard'">
-          <ion-icon name="time-outline"></ion-icon>
           <ion-label>Aufwändig</ion-label>
         </ion-chip>
       </ion-card-title>
