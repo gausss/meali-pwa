@@ -14,7 +14,6 @@ export class MealService {
   private initStore() {
     const storedData = localStorage.getItem(this.storeKey);
     if (storedData) {
-      console.log(storedData);
       this.store = new Map(JSON.parse(storedData));
     } else {
       this.store = new Map(meals.map((meal) => [meal.id, meal as Meal]));
