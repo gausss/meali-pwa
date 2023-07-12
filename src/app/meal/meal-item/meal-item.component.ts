@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Ingredient, Meal } from '../meal.model';
-import { MealService } from '../../shared/meal.service';
+import { MealService } from '../../meal.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { InputCustomEvent, SelectCustomEvent } from '@ionic/angular';
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { MealService } from '../../shared/meal.service';
-import { PlanService } from '../../shared/plan.service';
+import { MealService } from '../../meal.service';
+import { PlanService } from '../../plan.service';
 
 @Component({
   selector: 'plan-list',

@@ -1,10 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {
-  RouterTestingModule
-} from '@angular/router/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { IonicModule } from '@ionic/angular';
-import { MandatoryFieldsPipe } from '../../shared/mandatory-fields.pipe';
+import { MandatoryFieldsPipe } from '../meal-item/mandatory-fields.pipe';
 import { MealListComponent } from './meal-list.component';
 
 describe('MealListComponent', () => {

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Meal } from '../meal/meal.model';
-import meals from '../meal/meals-dummy.json';
+import { Meal } from './meal/meal.model';
+import meals from './meal/meals-dummy.json';
 
 @Injectable({ providedIn: 'root' })
 export class MealService {

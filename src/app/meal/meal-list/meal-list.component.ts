@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MealService } from '../../shared/meal.service';
+import { MealService } from '../../meal.service';
 
 @Component({
   selector: 'app-meal-list',
