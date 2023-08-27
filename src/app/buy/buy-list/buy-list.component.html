@@ -12,7 +12,12 @@
   </ion-header>
 
   <div *ngIf="planService.isEmpty$() | async" class="ion-padding">
-    <img src="assets/ravioli.png" class="empty-bg" alt="pasta-farfalle" />
+    <img
+      src="assets/ravioli.png"
+      class="empty-bg"
+      alt="pasta-farfalle"
+      id="emptyBuyList"
+    />
     <h3>Erstelle zuerst einen Plan um eine Einkaufsliste zu erhalten.</h3>
   </div>
   <ng-container *ngFor="let suggestion of planService.get$() | async">
