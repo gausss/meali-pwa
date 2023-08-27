@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Ingredient, Meal } from '../meal.model';
 import { MealService } from '../../meal.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -8,6 +8,7 @@ import { InputCustomEvent, SelectCustomEvent } from '@ionic/angular';
   selector: 'app-meal-item',
   templateUrl: './meal-item.component.html',
   styleUrls: ['./meal-item.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MealItemComponent {
   mealDraft: Partial<Meal>;
@@ -76,6 +77,7 @@ export class MealItemComponent {
       this.currentIngredient = { ...this.currentIngredient, amount: undefined };
     }
   }
+
   onUnitChange(event: Event) {
     const value = (event as SelectCustomEvent).detail.value;
     if (value) {

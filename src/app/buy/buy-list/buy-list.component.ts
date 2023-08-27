@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MealService } from '../../meal.service';
 import { PlanService } from '../../plan.service';
 
@@ -6,6 +6,7 @@ import { PlanService } from '../../plan.service';
   selector: 'app-buy-list',
   templateUrl: './buy-list.component.html',
   styleUrls: ['./buy-list.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BuyListComponent {
   constructor(

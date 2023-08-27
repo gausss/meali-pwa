@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { MealService } from '../../meal.service';
 import { Suggestion } from '../../plan.service';
 
@@ -6,6 +6,7 @@ import { Suggestion } from '../../plan.service';
   selector: 'plan-item',
   templateUrl: './plan-item.component.html',
   styleUrls: ['./plan-item.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PlanItemComponent {
   @Input() suggestion: Suggestion | undefined;

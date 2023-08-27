@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MealService } from '../../meal.service';
 import { PlanService } from '../../plan.service';
 
@@ -6,6 +6,7 @@ import { PlanService } from '../../plan.service';
   selector: 'plan-list',
   templateUrl: './plan-list.component.html',
   styleUrls: ['./plan-list.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PlanListComponent {
   constructor(

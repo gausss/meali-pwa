@@ -1,5 +1,4 @@
 import { MealService } from './meal.service';
-import { Difficulty, Ingredient } from './meal/meal.model';
 
 describe('MealService', () => {
   let mealService: MealService;
